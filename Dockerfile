@@ -24,7 +24,8 @@ RUN apt-get -y install \
     php5-curl \
     php5-gd \
     php5-mcrypt \
-    php-apc > /dev/null 2>&1
+    libapache2-mod-php5 \
+    php-apc
 
 RUN curl --silent https://getcomposer.org/installer | php && \
     mv composer.phar /usr/local/bin/composer > /dev/null 2>&1
