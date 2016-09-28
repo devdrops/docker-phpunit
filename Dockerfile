@@ -2,6 +2,11 @@ FROM php:7.0-cli
 
 MAINTAINER Davi Marcondes Moreira <davi.marcondes.moreira@gmail.com>
 
+ARG VCS_REF
+
+LABEL org.label-schema.vcs-ref=$VCS_REF \
+      org.label-schema.vcs-url="e.g. https://github.com/devdrops/docker-phpunit"
+
 RUN curl --silent https://getcomposer.org/installer | php && \
     mv ./composer.phar /usr/local/bin/composer > /dev/null 2>&1
 
